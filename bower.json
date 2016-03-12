@@ -1,0 +1,22 @@
+{
+  "name": "pnae",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Allan Oliveira <allanolivei@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.1",
+    "bootstrap-sass": "^3.3.6"
+  }
+}

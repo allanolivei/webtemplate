@@ -1,0 +1,76 @@
+#Exemplos
+
+
+### GULP
+
+$gulp html 			#gerar arquivos html na pasta distribuicao sem otimização
+$gulp css 			#gerar arquivos css na pasta distribuicao sem otimização
+$gulp js 			#gerar arquivos js na pasta distribuicao sem otimização
+$gulp images 		#gerar arquivos de imagens na pasta distribuicao otimizado
+$gulp optimize 		#gerar html, js e css otimizado
+$gulp send 			#enviar arquivos da pasta de distribuicao para o servidor
+$gulp build 		#limpar a pasta de distribuicao e gerar os arquivos otimizados
+$gulp build-send 	#gerar arquivos otimizados e enviar para o servidor
+
+
+
+### NUNJUCKS
+
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+{# Comentario #}
+
+<!-- importando macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+
+<!-- importando alguns macros diretamente:  --> 
+{% from "macros/navigation.nunjucks" import field, label as description %}
+
+<!-- incluindo file -->
+{% include "partials/navigation.nunjucks" %}
+
+<!-- chamando macro e passando parametro -->
+{{ nav.active('contact') }}
+
+<!-- modificando valor de variavel -->
+{% set maintitle = "Nicole Jacome" %}
+
+<!-- filters -->
+<h1>
+{{ maintitle | title | replace('ALLAN', 'ANGELICA') | capitalize }}
+{{ "<Eu@tenho$caracteres%especiais>" | escape }}
+{{ "<Eu@tenho$caracteres%especiais>" | safe }}
+</h1>
+
+<!-- conditional -->
+{% if 1 == false %}
+	Ola mundo do operador logico.
+{% else %}
+	Não é verdadeira
+{% endif %}
+{% if users and showUsers %}...{% endif %}
+{% if i == 0 and not hideFirst %}...{% endif %}
+{% if (x < 5 or y < 5) and foo %}...{% endif %}
+
+<!-- variavel global -->
+<h1>{{ globalTitle }}</h1>
+
+<!-- filtro: slug -->
+<h3>{{ 'My important post'|slug }}</h3>
+
+<!-- loop foreach -->
+{% for content in titles %}
+	<h5>{{content.title}}</h5>
+{% else %}
+	A lista de titulos esta vazia
+{% endfor %}
+
+<!-- loop forin -->
+{% for i in [1,2,3,4,5] -%}
+  {{ i }}
+{%- endfor %}<!-- -: remove espacos em brancos desnecessarios -->
+
+
+{% endblock %}

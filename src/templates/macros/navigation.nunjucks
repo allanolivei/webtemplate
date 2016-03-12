@@ -1,0 +1,21 @@
+{% macro active(activePage='home') %}
+<nav>
+	<a href="#" class="{%if activePage == 'home' %} active {% endif %}">Home</a>
+	<a href="#" class="{%if activePage == 'about' %} active {% endif %}">About</a>
+	<a href="#" class="{%if activePage == 'contact' %} active {% endif %}">Contact</a>
+</nav>
+{% endmacro %}
+
+
+{% macro label(text) %}
+<div>
+  <label>{{ text }}</label>
+</div>
+{% endmacro %}
+
+{% macro field(name, value='', type='text') %}
+<div class="field">
+  <input type="{{ type }}" name="{{ name }}"
+         value="{{ value | escape }}" />
+</div>
+{% endmacro %}

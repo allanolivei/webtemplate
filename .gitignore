@@ -1,0 +1,6 @@
+/[Dd]esign/
+/[Dd]ist/
+/[Bb]ower_components/
+/[Nn]ode_modules/
+
+.DS_Store

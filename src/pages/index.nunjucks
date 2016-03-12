@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- build:css css/main.css -->
+	<!-- bower:css -->
+    <!-- endbower -->
+	<link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+</head>
+<body>
+
+		{% for i in range(10) %}
+			<h1>{{i}}</h1>
+		{% endfor %}
+
+	<!-- build:js js/main.js -->
+	<!-- bower:js -->
+    <!-- endbower -->
+	<script src="js/main.js"></script>
+    <!-- endbuild -->
+	
+</body>
+</html>
